@@ -13,3 +13,14 @@ services:
     image: t3-app
     env_file:
       - .env
+  dev-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env.local
