@@ -31,7 +31,11 @@ export default function RootLayout({
         )}
       >
         <TRPCReactProvider cookies={cookies().toString()}>
-          {children}
+          <main className=" relative flex flex-col min-h-screen">
+            <div className=" flex-grow flex-1">
+              {children}
+            </div>
+          </main>
         </TRPCReactProvider>
       </body>
     </html>
